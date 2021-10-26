@@ -99,30 +99,49 @@ let icone = [
 ];
 
 
+function printIcons(){
 
-icone.forEach((icona, index, array) => {
+	const select = document.getElementById("membership")
+	
+	const container = document.querySelector(".row");
+	
+	container.innerHTML = "";
 
-	if(icona.type=="user"){
-		var classColor = "user_color"
-	}
-     else if(icona.type=="vegetable"){
-		classColor = "vegetable_color" 
-	}
-	else if(icona.type=="animal"){
-		classColor = "animals_color"
-	}
+	icone.forEach((icona, index, array) => {
+		if(select.value == icona.type || select.value == "all" ){
 
-     const card = `
-     <div class="card" style="width: 18rem;">
-          <i class="${icona.family} ${icona.prefix}${icona.name} ${classColor}"></i>
-               <div class="card-body">
-                    <p class="card-text">${icona.name} </p>
-               </div>
-     </div>
-     `
-	document.querySelector(".row").insertAdjacentHTML('beforeend', card)
-  
-})
+			if(icona.type=="user"){
+				var classColor = "user_color"
+			}
+			else if(icona.type=="vegetable"){
+				classColor = "vegetable_color" 
+			}
+			else if(icona.type=="animal"){
+				classColor = "animals_color"
+			}
+		
+			const card = `
+			<div class="card" style="width: 18rem;">
+				<i class="${icona.family} ${icona.prefix}${icona.name} ${classColor}"></i>
+					<div class="card-body">
+						<p class="card-text">${icona.name} </p>
+					</div>
+			</div>
+			`
+			container.innerHTML += card;
+		}
+
+	})
+
+}
+
+printIcons()
+
+const select = document.getElementById("membership");
+
+select.addEventListener("change", printIcons)
+
+
 
 
 
