@@ -105,21 +105,45 @@ let icone = [
 icone.forEach((icona, index, array) => {
      const card = `
      <div class="card" style="width: 18rem;">
-          <i class="${icona.family} ${icona.prefix}${icona.name}"></i>
+          <i class="${icona.family} ${icona.prefix}${icona.name} ${icona.type} "></i>
                <div class="card-body">
                     <p class="card-text">${icona.name} </p>
                </div>
      </div>
      `
      document.querySelector(".row").insertAdjacentHTML('beforeend', card)
+
+     
+     
+
+     
 })
 
+let selezioneFamigliaUser = document.querySelectorAll(".user")
+let selezioneFamigliaAnimali = document.querySelectorAll(".animal")
+let selezioneFamigliaVegetali = document.querySelectorAll(".vegetable")
 
+console.log(selezioneFamigliaUser)
+console.log(selezioneFamigliaAnimali)
+console.log(selezioneFamigliaVegetali)
 
+selezioneFamigliaUser.forEach((icona) => {
+     
+     icona.classList.add("user_color")
+     
+})
 
+selezioneFamigliaAnimali.forEach((icona) => {
+     
+     icona.classList.add("animals_color")
+     
+})
 
-
-
+selezioneFamigliaVegetali.forEach((icona) => {
+     
+     icona.classList.add("vegetable_color")
+     
+})
 
 
 
