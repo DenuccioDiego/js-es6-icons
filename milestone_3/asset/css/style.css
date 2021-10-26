@@ -1,0 +1,31 @@
+.dropdown:hover .dropdown-content {
+     display: block;
+}
+
+.dropdown-content {
+     display: none;
+     position: absolute;
+     background-color: #f9f9f9;
+     min-width: 160px;
+     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+     padding: 12px 16px;
+     z-index: 1;
+}
+
+.dropdown {
+     position: relative;
+     display: inline-block;
+}
+
+
+.user_color{
+     color: rgb(78, 2, 78);
+}
+
+.animals_color{
+     color: blue;
+}
+
+.vegetable_color{
+     color: rgb(255, 136, 0);
+}
