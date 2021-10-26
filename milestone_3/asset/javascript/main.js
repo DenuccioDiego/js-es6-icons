@@ -1,4 +1,4 @@
-
+// array di oggetti delle icone stampate 
 let icone = [
 	{
 		name: 'cat',
@@ -99,19 +99,23 @@ let icone = [
 ];
 
 
+let select = document.getElementById("membership") //seleziono il menù a tendina 
+let container = document.querySelector(".row"); //seleziono il container nel quale andranno le card
+
+
 function printIcons(){
 
-	const select = document.getElementById("membership")
-	
-	const container = document.querySelector(".row");
-	
-	container.innerHTML = "";
+	container.innerHTML = ""; // svuoto il container dalle card 
 
-	icone.forEach((icona, index, array) => {
-		if(select.value == icona.type || select.value == "all" ){
+	// ciclo per entrare in ogni singolo oggetto 
+	icone.forEach((icona) => {
+		if(select.value == icona.type || select.value == "all" ){ // 
 
+			let classColor = "" // dichiaro la varbile che conterrà la classe css che vorremmo introdurre nella variabile card
+
+			//condizioni con le quali inserisco le classi per i colori
 			if(icona.type=="user"){
-				var classColor = "user_color"
+				classColor = "user_color"
 			}
 			else if(icona.type=="vegetable"){
 				classColor = "vegetable_color" 
@@ -128,18 +132,16 @@ function printIcons(){
 					</div>
 			</div>
 			`
-			container.innerHTML += card;
+			container.innerHTML += card; // stampo nel container la variabile card che contiene la card con i div 
 		}
 
 	})
 
 }
 
-printIcons()
+printIcons() // richiamo funzione
 
-const select = document.getElementById("membership");
-
-select.addEventListener("change", printIcons)
+select.addEventListener("change", printIcons) // metto in ascolto il menù a tendina ogni qual volta avviene un cambiamento all'interno di esso 
 
 
 
