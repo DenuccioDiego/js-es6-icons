@@ -100,50 +100,76 @@ let icone = [
 
 
 
-
-
 icone.forEach((icona, index, array) => {
+
+	if(icona.type=="user"){
+		var classColor = "user_color"
+	}
+     else if(icona.type=="vegetable"){
+		classColor = "vegetable_color" 
+	}
+	else if(icona.type=="animal"){
+		classColor = "animals_color"
+	}
+
      const card = `
      <div class="card" style="width: 18rem;">
-          <i class="${icona.family} ${icona.prefix}${icona.name} ${icona.type} "></i>
+          <i class="${icona.family} ${icona.prefix}${icona.name} ${classColor}"></i>
                <div class="card-body">
                     <p class="card-text">${icona.name} </p>
                </div>
      </div>
      `
-     document.querySelector(".row").insertAdjacentHTML('beforeend', card)
-
-     
-     
-
-     
+	document.querySelector(".row").insertAdjacentHTML('beforeend', card)
+  
 })
 
-let selezioneFamigliaUser = document.querySelectorAll(".user")
-let selezioneFamigliaAnimali = document.querySelectorAll(".animal")
-let selezioneFamigliaVegetali = document.querySelectorAll(".vegetable")
 
-console.log(selezioneFamigliaUser)
-console.log(selezioneFamigliaAnimali)
-console.log(selezioneFamigliaVegetali)
 
-selezioneFamigliaUser.forEach((icona) => {
-     
-     icona.classList.add("user_color")
-     
-})
 
-selezioneFamigliaAnimali.forEach((icona) => {
-     
-     icona.classList.add("animals_color")
-     
-})
 
-selezioneFamigliaVegetali.forEach((icona) => {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let selezioneFamigliaUser = document.querySelectorAll(".user")
+// let selezioneFamigliaAnimali = document.querySelectorAll(".animal")
+// let selezioneFamigliaVegetali = document.querySelectorAll(".vegetable")
+
+// console.log(selezioneFamigliaUser)
+// console.log(selezioneFamigliaAnimali)
+// console.log(selezioneFamigliaVegetali)
+
+// selezioneFamigliaUser.forEach((icona) => {
      
-     icona.classList.add("vegetable_color")
+//      icona.classList.add("user_color")
      
-})
+// })
+
+// selezioneFamigliaAnimali.forEach((icona) => {
+     
+//      icona.classList.add("animals_color")
+     
+// })
+
+// selezioneFamigliaVegetali.forEach((icona) => {
+     
+//      icona.classList.add("vegetable_color")
+     
+// })
 
 
 
