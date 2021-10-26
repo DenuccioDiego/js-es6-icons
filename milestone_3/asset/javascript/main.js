@@ -121,8 +121,8 @@ function printIcons(){
 			}
 		
 			const card = `
-			<div class="card" style="width: 18rem;">
-				<i class="${icona.family} ${icona.prefix}${icona.name} ${classColor}"></i>
+			<div class="card w-25 text-center p-1">
+				<i class="fs-2 ${icona.family} ${icona.prefix}${icona.name} ${classColor}"></i>
 					<div class="card-body">
 						<p class="card-text">${icona.name} </p>
 					</div>

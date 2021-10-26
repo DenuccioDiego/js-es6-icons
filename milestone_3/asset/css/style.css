@@ -11,3 +11,17 @@
      color: rgb(255, 136, 0);
 }
 
+.color_bg_header{
+     background-color: #29b1dd;
+     color: white;
+     height: 50px;
+     line-height: 50px;
+}
+
+#titolo{
+     color: #29b1dd;
+}
+
+
+
+
